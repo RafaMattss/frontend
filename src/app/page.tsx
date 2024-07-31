@@ -1,76 +1,88 @@
-import Image from "next/image";
 import { AiFillEnvironment } from "react-icons/ai";
-import { FaTools, FaUserAlt } from "react-icons/fa";
-import { GrVmMaintenance } from "react-icons/gr";
-import { MdDashboard } from "react-icons/md";
+import { Footer } from "./components/footer";
+import { Aside } from "./components/aside/aside";
+import { Card } from "./components/page/card";
+import Table from "./components/table/table";
+
+const cards = [
+  {
+      color: "bg-red-500", qty: "200", text: "Ambientes", icon: <AiFillEnvironment size={24} className="ml-4"/>
+  },
+  {
+      color: "bg-blue-500", qty: "200", text: "Urgentes", icon: <AiFillEnvironment size={24} className="ml-4"/>
+  },
+  {
+      color: "bg-green-500", qty: "200", text: "Manutenções", icon: <AiFillEnvironment size={24} className="ml-4"/>
+  },
+  {
+      color: "bg-yellow-500", qty: "200", text: "Equipamentos", icon: <AiFillEnvironment size={24} className="ml-4"/>
+  },
+]
+
+const dados = [
+  { ambiente: 'Sala 1', equipamento: 'Projetor', solicitacao: 12, atendimento: 8 },
+  { ambiente: 'Sala 2', equipamento: 'Computador', solicitacao: 5, atendimento: 5 },
+  { ambiente: 'Sala 3', equipamento: 'Impressora', solicitacao: 7, atendimento: 7 },
+  { ambiente: 'Sala 4', equipamento: 'Scanner', solicitacao: 2, atendimento: 2 },
+  { ambiente: 'Sala 5', equipamento: 'Câmera', solicitacao: 10, atendimento: 6 },
+  { ambiente: 'Sala 6', equipamento: 'Microfone', solicitacao: 3, atendimento: 3 },
+  { ambiente: 'Sala 7', equipamento: 'Projetor', solicitacao: 15, atendimento: 10 },
+  { ambiente: 'Sala 8', equipamento: 'Computador', solicitacao: 8, atendimento: 8 },
+  { ambiente: 'Sala 9', equipamento: 'Impressora', solicitacao: 4, atendimento: 4 },
+  { ambiente: 'Sala 10', equipamento: 'Scanner', solicitacao: 1, atendimento: 1 },
+  { ambiente: 'Sala 11', equipamento: 'Câmera', solicitacao: 6, atendimento: 5 },
+  { ambiente: 'Sala 12', equipamento: 'Microfone', solicitacao: 2, atendimento: 2 },
+  { ambiente: 'Sala 13', equipamento: 'Projetor', solicitacao: 11, atendimento: 9 },
+  { ambiente: 'Sala 14', equipamento: 'Computador', solicitacao: 3, atendimento: 3 },
+  { ambiente: 'Sala 15', equipamento: 'Impressora', solicitacao: 5, atendimento: 5 },
+  { ambiente: 'Sala 16', equipamento: 'Scanner', solicitacao: 7, atendimento: 6 },
+  { ambiente: 'Sala 17', equipamento: 'Câmera', solicitacao: 9, atendimento: 8 },
+  { ambiente: 'Sala 18', equipamento: 'Microfone', solicitacao: 4, atendimento: 3 },
+  { ambiente: 'Sala 19', equipamento: 'Projetor', solicitacao: 13, atendimento: 11 },
+  { ambiente: 'Sala 20', equipamento: 'Computador', solicitacao: 2, atendimento: 2 },
+  { ambiente: 'Sala 21', equipamento: 'Impressora', solicitacao: 6, atendimento: 5 },
+  { ambiente: 'Sala 22', equipamento: 'Scanner', solicitacao: 1, atendimento: 1 },
+  { ambiente: 'Sala 23', equipamento: 'Câmera', solicitacao: 8, atendimento: 7 },
+  { ambiente: 'Sala 24', equipamento: 'Microfone', solicitacao: 3, atendimento: 3 },
+  { ambiente: 'Sala 25', equipamento: 'Projetor', solicitacao: 14, atendimento: 12 },
+  { ambiente: 'Sala 26', equipamento: 'Computador', solicitacao: 5, atendimento: 5 },
+  { ambiente: 'Sala 27', equipamento: 'Impressora', solicitacao: 7, atendimento: 6 },
+  { ambiente: 'Sala 28', equipamento: 'Scanner', solicitacao: 2, atendimento: 2 },
+  { ambiente: 'Sala 29', equipamento: 'Câmera', solicitacao: 10, atendimento: 9 },
+  { ambiente: 'Sala 30', equipamento: 'Microfone', solicitacao: 4, atendimento: 4 },
+]
 
 export default function Home() {
+
+
   return (
     <div className="h-screen flex flex-col">
       <div className="flex-1 flex">
-        <aside className="w-64 p-6 bg-gray-400/60">
-          <Image src={"/image/LOGO_T4.png"} alt="Logo" width={240} height={240} className="w-full"/>
-          <nav className="flex flex-col space-y-4 mt-6 text-2xl gap-6">
-            <a href="" className="flex items-center gap-4 hover:font-semibold ">
-              <MdDashboard />
-              Dashboard
-            </a>
-            <a href="" className="flex items-center gap-4 hover:font-semibold ">
-              <AiFillEnvironment />
-              Ambientes</a>
-            <a href="" className="flex items-center gap-4 hover:font-semibold ">
-              <FaTools />
-              Equipamentos</a>
-            <a href="" className="flex items-center gap-4 hover:font-semibold ">
-              <GrVmMaintenance />
-              Manutenções</a>
-            <a href="" className="flex items-center gap-4 hover:font-semibold ">
-              <FaUserAlt />
-              Usuários</a>
-          </nav>
-        </aside>
+      <Aside />
         <main className="flex-1 p-6 bg-gray-500">
           <h1 className="text-4xl font-bold uppercase w-full p-6 text-center">Sistema de Gestão de Manutenção</h1>
 
           <div>
             <div className="grid grid-cols-4 gap-4 p-6">
-              <div className="bg-red-500 p-6 flex gap-2 rounded-xl">
-                <div className="flex-1 flex flex-col">
-                <strong className="text-3xl font-bold">200</strong>
-                <span className="font-semibold">Ambientes</span>
-                </div>
-                <AiFillEnvironment size={24} className="ml-4"/>
-              </div>
 
-              <div className="bg-green-500 p-6 flex gap-2 rounded-xl">
-                <div className="flex-1 flex flex-col">
-                <strong className="text-3xl font-bold">200</strong>
-                <span className="font-semibold">Ambientes</span>
-                </div>
-                <AiFillEnvironment size={24} className="ml-4"/>
-              </div>
+              {cards.map((props) =>(
+                <Card color={props.color}
+                      qty={props.qty}
+                      text={props.text}
+                      icon={props.icon} />
+              ))} 
 
-              <div className="bg-blue-500 p-6 flex gap-2 rounded-xl">
-                <div className="flex-1 flex flex-col">
-                <strong className="text-3xl font-bold">200</strong>
-                <span className="font-semibold">Ambientes</span>
-                </div>
-                <AiFillEnvironment size={24} className="ml-4"/>
               </div>
-
-              <div className="bg-yellow-500 p-6 flex gap-2 rounded-xl">
-                <div className="flex-1 flex flex-col">
-                <strong className="text-3xl font-bold">200</strong>
-                <span className="font-semibold">Ambientes</span>
-                </div>
-                <AiFillEnvironment size={24} className="ml-4"/>
-              </div>
+          </div>
+          <div className="container mx-auto p-4 bg-gray-800/70 rounded-lg">
+            <h1 className="text-2xl font-bold mb-4 text-center">Tabela de Equipamentos</h1>
+            <div className="max-h-96 overflow-y-auto">
+              <Table dados={dados} />
             </div>
           </div>
-
         </main>
       </div>
-      <footer className="p-4 bg-white text-center text-red-400 text-xl">Todos os direitos reservados &copy; 2024</footer>
+      <Footer />
     </div>
   );
 }
