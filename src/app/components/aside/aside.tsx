@@ -10,7 +10,7 @@ export function Aside (){
     return(
 
         <>
-        <aside className="w-64 p-6 bg-gray-400/60">
+        <aside className="w-64 p-6 bg-cyan-600 h-auto ">
           <Image src={"/image/LOGO_T4.png"} alt="Logo" width={240} height={240} className="w-full"/>
           <nav className="flex flex-col space-y-4 mt-6 text-2xl gap-6">
             <NavLink />

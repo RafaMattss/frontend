@@ -3,19 +3,20 @@ import { Footer } from "./components/footer";
 import { Aside } from "./components/aside/aside";
 import { Card } from "./components/page/card";
 import Table from "./components/table/table";
+import { BarChart } from "@tremor/react";
 
 const cards = [
   {
-      color: "bg-red-500", qty: "200", text: "Ambientes", icon: <AiFillEnvironment size={24} className="ml-4"/>
+      color: "bg-red-500", qty: "23", text: "Ambientes", icon: <AiFillEnvironment size={24} className="ml-4"/>
   },
   {
-      color: "bg-blue-500", qty: "200", text: "Urgentes", icon: <AiFillEnvironment size={24} className="ml-4"/>
+      color: "bg-blue-500", qty: "31", text: "Urgentes", icon: <AiFillEnvironment size={24} className="ml-4"/>
   },
   {
-      color: "bg-green-500", qty: "200", text: "Manutenções", icon: <AiFillEnvironment size={24} className="ml-4"/>
+      color: "bg-green-500", qty: "12", text: "Manutenções", icon: <AiFillEnvironment size={24} className="ml-4"/>
   },
   {
-      color: "bg-yellow-500", qty: "200", text: "Equipamentos", icon: <AiFillEnvironment size={24} className="ml-4"/>
+      color: "bg-yellow-500", qty: "8", text: "Equipamentos", icon: <AiFillEnvironment size={24} className="ml-4"/>
   },
 ]
 
@@ -52,6 +53,27 @@ const dados = [
   { ambiente: 'Sala 30', equipamento: 'Microfone', solicitacao: 4, atendimento: 4 },
 ]
 
+const chartdata = [
+  {
+    name: 'Ambientes',
+    'Número de chamados': 23,
+  },
+  {
+    name: 'Urgentes',
+    'Número de chamados': 31,
+  },
+  {
+    name: 'Manutenções',
+    'Número de chamados': 12,
+  },
+  {
+    name: 'Equipamentos',
+    'Número de chamados': 8,
+  },
+];
+
+
+
 export default function Home() {
 
 
@@ -59,7 +81,7 @@ export default function Home() {
     <div className="h-screen flex flex-col">
       <div className="flex-1 flex">
       <Aside />
-        <main className="flex-1 p-6 bg-gray-500">
+        <main className="flex-1 p-6 bg-cyan-500">
           <h1 className="text-4xl font-bold uppercase w-full p-6 text-center">Sistema de Gestão de Manutenção</h1>
 
           <div>
@@ -74,11 +96,22 @@ export default function Home() {
 
               </div>
           </div>
-          <div className="container mx-auto p-4 bg-gray-800/70 rounded-lg">
-            <h1 className="text-2xl font-bold mb-4 text-center">Tabela de Equipamentos</h1>
+          <div className="container mx-auto p-4 bg-cyan-700 rounded-lg">
+            <h1 className="text-2xl font-bold mb-4 text-center">Histórico de Chamados</h1>
             <div className="max-h-96 overflow-y-auto">
               <Table dados={dados} />
             </div>
+                  <h3 className="text-lg font-medium text-white mt-4 text-center">
+                    Número de chamados por Tipo
+                  </h3>
+                  <BarChart
+                    className="mt-6 font-bold text-white max-w-screen-md ml-64"
+                    data={chartdata}
+                    index="name"
+                    categories={['Número de chamados']}
+                    colors={['red']}
+                    yAxisWidth={24}
+                  />
           </div>
         </main>
       </div>

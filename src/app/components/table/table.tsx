@@ -17,7 +17,7 @@ const Table: React.FC<TableProps> = ({ dados }) => {
   return (
     <div className="max-w-full overflow-x-auto">
       <table className="min-w-full bg-white border border-gray-200">
-        <thead className="bg-black text-white">
+        <thead className="bg-cyan-900 text-white">
           <tr>
             <th className="px-4 py-2 text-left">Ambiente</th>
             <th className="px-4 py-2 text-left">Equipamento</th>
@@ -28,7 +28,7 @@ const Table: React.FC<TableProps> = ({ dados }) => {
         </thead>
         <tbody>
           {dados.map((item, index) => (
-            <tr key={index} className="border-t border-gray-200 text-black">
+            <tr key={index} className="border-t border-cyan-200 text-black">
               <td className="px-4 py-2">{item.ambiente}</td>
               <td className="px-4 py-2">{item.equipamento}</td>
               <td className="px-4 py-2 text-right">{item.solicitacao}</td>
