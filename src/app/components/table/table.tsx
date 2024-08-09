@@ -15,7 +15,7 @@ interface TableProps {
 
 const Table: React.FC<TableProps> = ({ dados }) => {
   return (
-    <div className="max-w-full overflow-x-auto">
+    <div className="max-w-full">
       <table className="min-w-full bg-white border border-gray-200">
         <thead className="bg-cyan-900 text-white">
           <tr>

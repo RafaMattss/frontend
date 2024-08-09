@@ -96,22 +96,26 @@ export default function Home() {
 
               </div>
           </div>
-          <div className="container mx-auto p-4 bg-cyan-700 rounded-lg">
+          <div className="container mx-auto p-10 gap-10 bg-cyan-700 rounded-lg flex">
+            <div className="flex-1">
             <h1 className="text-2xl font-bold mb-4 text-center">Histórico de Chamados</h1>
-            <div className="max-h-96 overflow-y-auto">
+            <div className="max-h-96 overflow-x-auto">
               <Table dados={dados} />
             </div>
-                  <h3 className="text-lg font-medium text-white mt-4 text-center">
+            </div>
+            <div className="flex-1">
+                  <h3 className="text-2xl font-bold mb-4 text-center">
                     Número de chamados por Tipo
                   </h3>
                   <BarChart
-                    className="mt-6 font-bold text-white max-w-screen-md ml-64"
+                    className="mt-6 font-bold text-white max-w-screen-md"
                     data={chartdata}
                     index="name"
                     categories={['Número de chamados']}
                     colors={['red']}
                     yAxisWidth={24}
                   />
+              </div>
           </div>
         </main>
       </div>
