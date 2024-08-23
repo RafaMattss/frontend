@@ -8,18 +8,18 @@ export function NavLink(){
 
     const links = [
         {
-            target: "#",
+            target: "/dashboard",
             text: "Dashboard",
             icon: <MdDashboard />
         },
         {
-            target: "#",
-            text: "Ambientes",
+            target: "/machines",
+            text: "Maquinas",
             icon: <AiFillEnvironment />
         },
         {
-            target: "#",
-            text: "Equipamentos",
+            target: "/parts",
+            text: "Peças",
             icon: <FaTools />
         },
         {

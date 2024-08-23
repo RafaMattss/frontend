@@ -1,8 +1,8 @@
 import { AiFillEnvironment } from "react-icons/ai";
-import { Footer } from "../app/components/footer";
-import { Aside } from "../app/components/aside/aside";
-import { Card } from "../app/components/page/card";
-import Table from "./components/tableDashboard/table";
+import { Footer } from "../components/footer";
+import { Aside } from "../components/aside/aside";
+import { Card } from "../components/page/card";
+import Table from "../components/tableDashboard/table";
 import { BarChart } from "@tremor/react";
 
 const cards = [
