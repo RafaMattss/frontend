@@ -206,19 +206,6 @@ export default function GerenciamentoMaquinas() {
                 <Table dados={dados} />
               </div>
             </div>
-            <div className="flex-1 flex flex-col items-center">
-              <h3 className="text-2xl font-bold mb-4 text-center">
-                Estatísticas de Manutenção
-              </h3>
-              <BarChart
-                className="mt-6 font-bold text-white max-w-screen-md"
-                data={chartdata}
-                index="name"
-                categories={["Número"]}
-                colors={["blue"]}
-                yAxisWidth={24}
-              />
-            </div>
           </div>
         </main>
       </div>

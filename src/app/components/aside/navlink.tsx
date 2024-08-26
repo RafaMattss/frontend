@@ -23,13 +23,13 @@ export function NavLink(){
             icon: <FaTools />
         },
         {
-            target: "#",
+            target: "/maintanence",
             text: "Manutenções",
             icon: <GrVmMaintenance />
         },
         {
-            target: "#",
-            text: "Usuários",
+            target: "/teams",
+            text: "Equipes",
             icon: <FaUserAlt />
         },
     ]
